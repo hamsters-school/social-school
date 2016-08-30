@@ -12,7 +12,6 @@ Site for Hamsters
           - year
           - hobbies
           
-2. right column should have slider with pictures
 
 ### Specification
 
@@ -27,8 +26,8 @@ Site for Hamsters
 ### Instruction
 
 1. install node.js version 5.9.1 or less
-2. n console write `npm install`
-2. In "app" folder write `bower install`
+2. In console write `npm install`
+2. In console write `bower install`
 3. In root folder (not "app") write `npm start` for start http server
 4. Open in browser link [http://localhost:8000](http://localhost:8000)
 
