@@ -1,3 +1,17 @@
+.avatar {
+  margin: 15px auto 15px 15px; }
 
+.title__name {
+  text-transform: capitalize;
+  margin-bottom: 40px;
+  margin-left: 15px; }
+
+.row__profile {
+  font-size: 17px;
+  list-style: none; }
+  .row__profile .col-xs-4 {
+    color: #787778; }
+  .row__profile .col-xs-8 {
+    text-transform: lowercase; }
 
 /*# sourceMappingURL=style.css.map */
