@@ -1,15 +1,10 @@
 .left-colum {
     background-color: #D3D3D3;
-}
-
-@media(min-width:768px) {
-    .left-colum {
-        min-height: 750px;
-    }
+    height: 100vh;
 }
 
 .right-colum {
-    min-height: 750px;
+    height: 100vh;
     background-color: aliceblue;
 }
 
@@ -25,13 +20,7 @@
 }
 
 .user-avatar__icon:hover {
-    box-shadow: -47px 43px 28px -15px rgba(0, 0, 0, 0.75);
-}
-
-@media(max-width:767px) {
-    .user-avatar__icon {
-        margin: 25px auto;
-    }
+    box-shadow: -31px 22px 49px 0px rgba(116, 140, 127, 1);
 }
 
 .user-info__list-opt {
@@ -55,5 +44,31 @@
 }
 
 .user-info__data-day {
+    font: italic 16px 'Constantia';
+}
+
+.user-info__head {
     font: 20px 'Constantia';
+}
+
+.user-avatar {
+    width: 90%;
+    margin: 0 auto;
+}
+
+@media(max-width:767px) {
+    .left-colum {
+        height: auto;
+    }
+    .user-avatar__icon {
+        margin: 25px auto;
+    }
+    .user-avatar {
+        width: 50%;
+    }
+}
+
+.reklama {
+    font-family'Constantia';
+    font-size: 40px;
 }
