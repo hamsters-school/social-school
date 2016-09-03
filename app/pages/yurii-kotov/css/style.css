@@ -1,0 +1,59 @@
+.left-colum {
+    background-color: #D3D3D3;
+}
+
+@media(min-width:768px) {
+    .left-colum {
+        min-height: 750px;
+    }
+}
+
+.right-colum {
+    min-height: 750px;
+    background-color: aliceblue;
+}
+
+.user__user-name {
+    font-size: 36px;
+    font-family: "Mistral";
+    margin-top: 25px;
+}
+
+.user-avatar__icon {
+    width: 100%;
+    margin: 25px auto;
+}
+
+.user-avatar__icon:hover {
+    box-shadow: -47px 43px 28px -15px rgba(0, 0, 0, 0.75);
+}
+
+@media(max-width:767px) {
+    .user-avatar__icon {
+        margin: 25px auto;
+    }
+}
+
+.user-info__list-opt {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.user-info {
+    display: none;
+}
+
+.wrapper-inf:hover .user-info {
+    display: block;
+}
+
+.user-info__hobbies {
+    text-transform: lowercase;
+    text-align: center;
+    font: italic 16px 'Copperplate Gothic Light';
+}
+
+.user-info__data-day {
+    font: 20px 'Constantia';
+}
