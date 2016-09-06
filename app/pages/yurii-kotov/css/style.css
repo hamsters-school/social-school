@@ -29,18 +29,8 @@
     margin: 10px 0;
 }
 
-.user-info {
-    display: none;
-}
-
-.wrapper-inf:hover .user-info {
-    display: block;
-}
-
 .user-info__hobbies {
-    text-transform: lowercase;
-    text-align: center;
-    font: italic 16px 'Copperplate Gothic Light';
+
 }
 
 .user-info__data-day {
@@ -48,7 +38,8 @@
 }
 
 .user-info__head {
-    font: 20px 'Constantia';
+    font: 18px 'Constantia';
+    text-align: left;
 }
 
 .user-avatar {
@@ -71,4 +62,17 @@
 .reklama {
     font-family'Constantia';
     font-size: 40px;
+}
+
+.wrapper-info {
+    background-color: darkseagreen;
+}
+
+.modify {
+    padding: 0 0 0 10px;
+}
+#user-info__hobby {
+    text-transform: lowercase;
+    text-align: left;
+    font: italic 16px 'Copperplate Gothic Light';
 }
