@@ -29,9 +29,7 @@
     margin: 10px 0;
 }
 
-.user-info__hobbies {
-
-}
+.user-info__hobbies {}
 
 .user-info__data-day {
     font: italic 16px 'Constantia';
@@ -40,6 +38,10 @@
 .user-info__head {
     font: 18px 'Constantia';
     text-align: left;
+}
+
+.user-info__hobby {
+    display: inline;
 }
 
 .user-avatar {
@@ -71,6 +73,7 @@
 .modify {
     padding: 0 0 0 10px;
 }
+
 #user-info__hobby {
     text-transform: lowercase;
     text-align: left;

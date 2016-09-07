@@ -6,17 +6,18 @@ window.onload = function anyDoing() {
     var hobby = [' Лентяйничать', " Спать", " Есть", " Синхрофазатрон"];
     hobby.push(' Хз что я еще могу делать');
 
+
     var addYear = document.getElementById('user-info__date');
-    var addHobby = document.getElementById('user-info__hobby');
-    var creatTag = document.createElement('li');
-    creatTag.className = 'user-info__hobby';
     addYear.innerHTML = bornYear;
 
-    function addToHtml(item) {
-        return addHobby.appendChild(creatTag);
-    }
+    var addHobby = document.getElementById('user-info__hobby');
 
-    hobby.forEach(addToHtml);
 
+
+    hobby.forEach(function (item) {
+        var creatTag = document.createElement('li');
+        creatTag.className = 'user-info__hobby'
+        addHobby.appendChild(creatTag).innerHTML = item + ', ';
+    });
 
 }
