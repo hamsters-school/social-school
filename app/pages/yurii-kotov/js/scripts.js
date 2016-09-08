@@ -20,4 +20,9 @@ window.onload = function anyDoing() {
         addHobby.appendChild(creatTag).innerHTML = item + ', ';
     });
 
+    var requestNews = new XMLHttpRequest();
+
+    requestNews.open('get', 'news.json', false);
+    requestNews.send();
+    /*document.getElementById('newsGet').appendChild(document.createElement(article)).innerHTML = requestNews.responseText;*/
 }
