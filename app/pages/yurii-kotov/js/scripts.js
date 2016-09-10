@@ -20,9 +20,30 @@ window.onload = function anyDoing() {
         addHobby.appendChild(creatTag).innerHTML = item + ', ';
     });
 
-    var requestNews = new XMLHttpRequest();
+    function getNewsFromGoogle() {
+        var requestNews = new XMLHttpRequest();
 
-    requestNews.open('get', 'news.json', false);
-    requestNews.send();
-    /*document.getElementById('newsGet').appendChild(document.createElement(article)).innerHTML = requestNews.responseText;*/
+        requestNews.open('get', "news.json", false);
+        requestNews.send();
+
+        requestNews.onreadystatechange = function () {
+            if (requestNews.readyState != 4) return;
+            if (requestNews.status != 200) {
+                console.log(requestNews.status + ': ' + requestNews.statusText);
+            } else {
+                var googleNews = JSON.parse(requestNews.responseText);
+                /*  showNews(googleNews);*/
+            }
+
+        }
+
+        function showNews(googleNews) {
+            googleNews.forEach(function (newsName) {
+                var getNews = document.getElementById('news-get');
+                var articleName = getNews.appendChild(document.createElement('li'));
+            })
+        }
+
+    }
+    getNewsFromGoogle() /*document.getElementById('newsGet').appendChild(document.createElement(article)).innerHTML = requestNews.responseText;*/
 }
