@@ -17,10 +17,11 @@ window.onload = function anyDoing() {
     hobby.forEach(function (item) {
         var creatTag = document.createElement('li');
         creatTag.className = 'user-info__hobby';
+        var addToHtml = addHobby.appendChild(creatTag).innerHTML;
         if (item == hobby.slice(-1)) {
-            addHobby.appendChild(creatTag).innerHTML = item + '; ';
+            addToHtml = item + '; ';
         } else {
-            addHobby.appendChild(creatTag).innerHTML = item + ',';
+            addToHtml = item + ',';
         }
 
     });
