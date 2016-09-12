@@ -1,6 +1,3 @@
-/**
- * Created by Admin on 28.08.2016.
- */
 var hobbyArray = ['танцы', 'спорт', 'вышивка крестом', 'психология', 'кулинария'];
 
 function hobbyList(hobbyArray) {
