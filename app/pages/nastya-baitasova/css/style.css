@@ -15,4 +15,7 @@
   .row__profile .col-xs-8 {
     text-transform: lowercase; }
 
+#news {
+  list-style: none; }
+
 /*# sourceMappingURL=style.css.map */
