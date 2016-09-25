@@ -2,6 +2,8 @@
  * Created by Admin on 28.08.2016.
  */
 window.onload = function anyDoing() {
+
+
     function addInfoAboutUser() {
         var bornYear = ['16 ноября 1988г'];
         var hobby = [' Лентяйничать', " Спать", " Есть", " Синхрофазатрон"];
@@ -29,36 +31,45 @@ window.onload = function anyDoing() {
     function getNewsFromGoogle() {
 
         var requestNews = new XMLHttpRequest();
-
-        requestNews.open('get', "news.json", false);
-
+        var url = "news.json";
 
         requestNews.onreadystatechange = function () {
-            if (requestNews.readyState != 4) return;
-            if (requestNews.status != 200) {
-                alert(requestNews.status + ': ' + requestNews.statusText);
-            } else {
-                try {
-                    blogNews = JSON.parse(requestNews.responseText);
-                } catch (someError) {
-                    alert('messaga' + someError.message);
-                }
+            if (this.readyState == 4 && this.status == 200) {
+                var blogNews = JSON.parse(this.responseText);
                 showNews(blogNews);
-            }
+                console.log(blogNews);
+
+            };
+
         };
+
+        requestNews.open('GET', url, true);
         requestNews.send();
-    }
 
-    console.log(getNewsFromGoogle())
+        function showNews(blogNews) {
+            var getNews = document.getElementById('getNews');
+            var createArtircleBlock = document.createElement('article');
+            var addArticleBlock = getNews.appendChild(createArtircleBlock);
 
-    /*    function showNews(blogNews) {
-            blogNews.forEach(function (item) {
-                var article = document.appendChild(document.createElement('article'));
-                article.innerHTML = item;
-            });
-        }*/
+            for (var i in blogNews.responseData) {
+                document.getElementById('headBlog').innerHTML = blogNews.responseData.query;
+            };
+            for (var k in blogNews.responseData.entries) {
+                var createArtircleBlock = document.createElement('article');
+                var addArticleBlock = getNews.appendChild(createArtircleBlock);
+                createArtircleBlock.style.marginBottom = '20px';
+                createArtircleBlock.style.border = '1px solid gold';
+                createArtircleBlock.style.fontSize = '12px';
+                //createArtircleBlock.className = 'col-md-12';
+                var elmentShow = '<img href="' + blogNews.responseData.entries[k].url + '">' +
+                    '<h5>' + blogNews.responseData.entries[k].title + '</h5>' +
+                    '<p>' + blogNews.responseData.entries[k].contentSnippet + '</p>' +
+                    '<a href="' + blogNews.responseData.entries[k].link + '">' + blogNews.responseData.entries[k].link + '</a>';
+                addArticleBlock.innerHTML = elmentShow;
+            };
+        };
+    };
+    getNewsFromGoogle();
 
-
-    //getNewsFromGoogle();
 
 };

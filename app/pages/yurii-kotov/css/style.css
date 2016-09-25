@@ -1,10 +1,14 @@
+body {
+    background: #D3D3D3;
+}
+
 .left-colum {
     background-color: #D3D3D3;
-    height: 100vh;
+    overflow: hidden;
 }
 
 .right-colum {
-    height: 100vh;
+    /* height: 100vh;*/
     background-color: aliceblue;
 }
 
@@ -79,9 +83,12 @@
     text-align: left;
     font: italic 16px 'Copperplate Gothic Light';
 }
+
 .head-news__header {
     text-align: center;
     margin-top: 30px;
     font-family: "Mistral";
     font-weight: 500;
 }
+
+.article-news {}
