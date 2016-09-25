@@ -58,7 +58,7 @@ window.onload = function anyDoing() {
                 var createArtircleBlock = document.createElement('article');
                 var addArticleBlock = getNews.appendChild(createArtircleBlock);
                 createArtircleBlock.style.marginBottom = '20px';
-                createArtircleBlock.style.border = '1px solid gold';
+                //createArtircleBlock.style.border = '1px solid gold';
                 createArtircleBlock.style.fontSize = '12px';
                 //createArtircleBlock.className = 'col-md-12';
                 var elmentShow = '<img href="' + blogNews.responseData.entries[k].url + '">' +
