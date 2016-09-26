@@ -72,11 +72,16 @@ window.onload = function anyDoing() {
     getNewsFromGoogle();
 
     function getToDoList() {
-        var buttonSub = document.getElementById('submitToDo');
-        buttonSub.addEventListener('submit', function () {
+        var addLiMarker = document.getElementById('toDoList');
+        var buttonEvent = document.getElementById('submitToDo');
+        buttonEvent.addEventListener('click', function () {
+            var toDoAreaText = document.getElementById('toDoAreaText').value;
+            var newLi = document.createElement('li');
+            newLi.innerHTML = toDoAreaText;
 
+            localStorage.setItem(toDoAreaText, toDoAreaText);
+            addLiMarker.appendChild(newLi);
         });
-
 
     };
     getToDoList();
