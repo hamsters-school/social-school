@@ -2,3 +2,4 @@
 node_modules/
 app/bower_components
 app/pages/nastya-baitasova/.sass-cache
+coverage/
