@@ -4,7 +4,7 @@
 window.onload = function anyDoing() {
 
 
-    function addInfoAboutUser() {
+    /*function addInfoAboutUser() {
         var bornYear = ['16 ноября 1988г'];
         var hobby = [' Лентяйничать', " Спать", " Есть", " Синхрофазатрон"];
         hobby.push(' Хз что я еще могу делать');
@@ -17,6 +17,8 @@ window.onload = function anyDoing() {
         hobby.forEach(function (item) {
             var creatTag = document.createElement('li');
             creatTag.className = 'user-info__hobby';
+
+
             var addToHtml = addHobby.appendChild(creatTag);
             if (item == hobby.slice(-1)) {
                 addToHtml.innerHTML = item + '... ';
@@ -25,13 +27,42 @@ window.onload = function anyDoing() {
             }
 
         });
-    };
+    };*/
+    function addInfoAboutUser() {
+        var bornYear = ['16 ноября 1988г'];
+        var hobby = ['Лентяйничать', "Спать", "Есть", "Синхрофазатрон", 'Хз что я еще могу делать'];
+
+        var addYear = document.getElementById('user-info__date');
+        var addHobby = document.getElementById('user-info__hobby');
+
+
+        addYear.innerHTML = bornYear;
+
+        hobby.forEach(function (item) {
+            var createTag = document.createElement('li');
+            createTag.className = 'user-info__hobby';
+
+            if (item == hobby.slice(-1)) {
+                item += '...';
+            } else {
+                item += ', ';
+            }
+            createTag.innerHTML = item;
+            addHobby.appendChild(createTag);
+        });
+    }
+
     addInfoAboutUser();
 
     function getNewsFromGoogle() {
 
         var requestNews = new XMLHttpRequest();
         var url = "news.json";
+
+
+
+        requestNews.open('GET', url, true);
+        requestNews.send();
 
         requestNews.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
@@ -43,9 +74,6 @@ window.onload = function anyDoing() {
 
         };
 
-        requestNews.open('GET', url, true);
-        requestNews.send();
-
         function showNews(blogNews) {
             var getNews = document.getElementById('getNews');
             var createArtircleBlock = document.createElement('article');
@@ -55,6 +83,7 @@ window.onload = function anyDoing() {
                 document.getElementById('headBlog').innerHTML = blogNews.responseData.query;
             };
             for (var k in blogNews.responseData.entries) {
+                console.log(k);
                 var createArtircleBlock = document.createElement('article');
                 var addArticleBlock = getNews.appendChild(createArtircleBlock);
                 createArtircleBlock.style.marginBottom = '20px';
