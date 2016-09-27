@@ -1,0 +1,125 @@
+    body {
+        background: #D3D3D3;
+    }
+    
+    .left-colum {
+        background-color: #D3D3D3;
+        overflow: hidden;
+    }
+    
+    .right-colum {
+        /* height: 100vh;*/
+        background-color: aliceblue;
+    }
+    
+    .user__user-name {
+        font-size: 36px;
+        font-family: "Mistral";
+        margin-top: 25px;
+    }
+    
+    .user-avatar__icon {
+        width: 100%;
+        margin: 25px auto;
+    }
+    
+    .user-avatar__icon:hover {
+        box-shadow: -31px 22px 49px 0px rgba(116, 140, 127, 1);
+    }
+    
+    .user-info__list-opt {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0;
+    }
+    
+    .user-info__hobbies {}
+    
+    .user-info__data-day {
+        font: italic 16px 'Constantia';
+    }
+    
+    .user-info__head {
+        font: 18px 'Constantia';
+        text-align: left;
+    }
+    
+    .user-info__hobby {
+        display: inline;
+    }
+    
+    .user-avatar {
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    @media(max-width:767px) {
+        .left-colum {
+            height: auto;
+        }
+        .user-avatar__icon {
+            margin: 25px auto;
+        }
+        .user-avatar {
+            width: 50%;
+        }
+    }
+    
+    .wrapper-info {
+        background-color: darkseagreen;
+    }
+    
+    .modify {
+        padding: 0 0 0 10px;
+    }
+    
+    #user-info__hobby {
+        text-transform: lowercase;
+        text-align: left;
+        font: italic 16px 'Copperplate Gothic Light';
+    }
+    
+    .head-news__header {
+        text-align: center;
+        margin-top: 30px;
+        font-family: "Mistral";
+        font-weight: 500;
+    }
+    
+    .decorate-line {
+        height: 1px;
+        width: 100%;
+        border: 1px solid gold;
+        margin: 20px 0;
+    }
+    
+    .article-news {}
+    
+    .news-blog {
+        border: 1px solid gold;
+    }
+    
+    .to-do__textarea {
+        background-color: #C0E0CB;
+    }
+.to-do__submit {
+    border: none;
+    background-color: black;
+    color: gold;
+    font-size: 16px; 
+    width: 100px;
+    line-height: 1.5;
+    border-radius: 10%;
+}
+
+.to-do__head {
+    font-size: 12px;
+   margin: 0;
+  
+}
+
+.to-do__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
