@@ -67,6 +67,30 @@
                 <div class="decorate-line"></div>
                 <div class="container-fluid">
                     <div class="row">
+                        <div class="col-sm-8 to-do__position_sm">
+                            <div class="to-do">
+                                <div class="to-do__body">
+                                    <ul id="toDoList" class="to-do__list">
+                                    </ul>
+                                </div>
+                                <div class="to-do__form">
+                                    <div class="row">
+                                        <form action="" method="post" name="forma" id="formData" class="col-xs-12">
+                                            <p class="to-do__head">Write here:</p>
+                                            <p>
+                                                <textarea name="text" id="toDoAreaText" rows="2" class="to-do__textarea" autofocus>
+                                                </textarea>
+                                            </p>
+                                            <input type="submit" value="send" id="submitToDo" class="to-do__submit">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
                         <div class="col-md-8 news-blog">
                             <div class="head-news">
                                 <h2 class="head-news__header" id="headBlog"></h2>
@@ -76,20 +100,25 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-sm-12 to-do__position_lg">
                             <div class="to-do">
                                 <div class="to-do__body">
                                     <ul id="toDoList" class="to-do__list">
 
                                     </ul>
                                 </div>
+
                                 <div class="to-do__form">
-                                    <form action="#" method="post" id="formData">
-                                        <p class="to-do__head">Write here:</p>
-                                        <textarea name="" id="toDoAreaText" cols="30" rows="2" class="to-do__textarea" placeholder="Type somthing...">
-                                        </textarea>
-                                        <input type="submit" value="send" id="submitToDo" class="to-do__submit">
-                                    </form>
+                                    <div class="row">
+                                        <form action="#toDoList" method="post" id="formData" class="col-xs-12">
+                                            <p class="to-do__head">Write here:</p>
+                                            <p>
+                                                <textarea name="text" id="toDoAreaText" rows="2" class="to-do__textarea">
+                                                </textarea>
+                                            </p>
+                                            <input type="submit" value="send" id="submitToDo" class="to-do__submit">
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -97,8 +126,10 @@
                 </div>
             </div>
         </div>
+        </div>
 
     </main>
+
 
     <script type="text/javascript" src="js/scripts.js"></script>
     <script src="../../bower_components/jquery/dist/jquery.js"></script>

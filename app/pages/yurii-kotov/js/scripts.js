@@ -39,7 +39,7 @@ window.onload = function anyDoing() {
                 showNews(blogNews);
                 console.log(blogNews);
 
-            };
+            }
 
         };
 
@@ -49,17 +49,13 @@ window.onload = function anyDoing() {
         function showNews(blogNews) {
             var getNews = document.getElementById('getNews');
             var createArtircleBlock = document.createElement('article');
-            var addArticleBlock = getNews.appendChild(createArtircleBlock);
 
-            for (var i in blogNews.responseData) {
-                document.getElementById('headBlog').innerHTML = blogNews.responseData.query;
-            };
+
+            document.getElementById('headBlog').innerHTML = blogNews.responseData.query;
             for (var k in blogNews.responseData.entries) {
                 var createArtircleBlock = document.createElement('article');
                 var addArticleBlock = getNews.appendChild(createArtircleBlock);
                 createArtircleBlock.style.marginBottom = '20px';
-                // createArtircleBlock.style.border = '1px solid gold';
-                createArtircleBlock.style.fontSize = '12px';
                 createArtircleBlock.className = 'col-md-10 col-md-offset-1';
                 var elmentShow = '<img href="' + blogNews.responseData.entries[k].url + '">' +
                     '<h5>' + blogNews.responseData.entries[k].title + '</h5>' +
@@ -72,7 +68,7 @@ window.onload = function anyDoing() {
     getNewsFromGoogle();
 
     function getToDoList() {
-        var addLiMarker = document.getElementById('toDoList');
+        /*var addLiMarker = document.getElementById('toDoList');
         var buttonEvent = document.getElementById('submitToDo');
         buttonEvent.addEventListener('click', function () {
             var toDoAreaText = document.getElementById('toDoAreaText').value;
@@ -81,7 +77,7 @@ window.onload = function anyDoing() {
 
             localStorage.setItem(toDoAreaText, toDoAreaText);
             addLiMarker.appendChild(newLi);
-        });
+        });*/
 
     };
     getToDoList();
