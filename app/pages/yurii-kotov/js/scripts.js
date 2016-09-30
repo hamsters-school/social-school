@@ -76,12 +76,19 @@ window.onload = function anyDoing() {
             newLi.textContent = toDoAreaText;
             localStorage.setItem(toDoAreaText, toDoAreaText);
             addLiMarker.appendChild(newLi);
-        });
+            document.getElementById('toDoAreaText').setAttribute('onclick', 'value=""');
 
+        });
         for (key in localStorage) {
             var liOnPage = addLiMarker.appendChild(document.createElement('li'));
             liOnPage.innerHTML = key;
+            liOnPage.addEventListener('click', function () {
+                localStorage.removeItem(key);
+                liOnPage.remove(this);
+            });
         };
+
+
 
     }
     getToDoList();
