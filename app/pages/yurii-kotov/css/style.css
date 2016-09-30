@@ -136,14 +136,11 @@
     }
     
     .to-do__position_sm {
-        display: none;
+        float: right;
     }
     
     @media(max-width:991px) {
         .to-do__position_sm {
-            display: block;
-        }
-        .to-do__position_lg {
-            display: none;
+            float: none;
         }
     }

@@ -25,7 +25,7 @@ window.onload = function anyDoing() {
             }
 
         });
-    };
+    }
     addInfoAboutUser();
 
     function getNewsFromGoogle() {
@@ -64,21 +64,25 @@ window.onload = function anyDoing() {
                 addArticleBlock.innerHTML = elmentShow;
             };
         };
-    };
+    }
     getNewsFromGoogle();
 
     function getToDoList() {
-        /*var addLiMarker = document.getElementById('toDoList');
+        var addLiMarker = document.getElementById('toDoList');
         var buttonEvent = document.getElementById('submitToDo');
         buttonEvent.addEventListener('click', function () {
             var toDoAreaText = document.getElementById('toDoAreaText').value;
             var newLi = document.createElement('li');
-            newLi.innerHTML = toDoAreaText;
-
+            newLi.textContent = toDoAreaText;
             localStorage.setItem(toDoAreaText, toDoAreaText);
             addLiMarker.appendChild(newLi);
-        });*/
+        });
 
-    };
+        for (key in localStorage) {
+            var liOnPage = addLiMarker.appendChild(document.createElement('li'));
+            liOnPage.innerHTML = key;
+        };
+
+    }
     getToDoList();
 };
