@@ -23,7 +23,6 @@ window.onload = function anyDoing() {
             } else {
                 addToHtml.innerHTML = item + ',';
             }
-
         });
     }
     addInfoAboutUser();
@@ -32,15 +31,12 @@ window.onload = function anyDoing() {
 
         var requestNews = new XMLHttpRequest();
         var url = "news.json";
-
         requestNews.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 var blogNews = JSON.parse(this.responseText);
                 showNews(blogNews);
                 console.log(blogNews);
-
             }
-
         };
 
         requestNews.open('GET', url, true);
@@ -49,8 +45,6 @@ window.onload = function anyDoing() {
         function showNews(blogNews) {
             var getNews = document.getElementById('getNews');
             var createArtircleBlock = document.createElement('article');
-
-
             document.getElementById('headBlog').innerHTML = blogNews.responseData.query;
             for (var k in blogNews.responseData.entries) {
                 var createArtircleBlock = document.createElement('article');
@@ -68,28 +62,34 @@ window.onload = function anyDoing() {
     getNewsFromGoogle();
 
     function getToDoList() {
-        var addLiMarker = document.getElementById('toDoList');
-        var buttonEvent = document.getElementById('submitToDo');
-        buttonEvent.addEventListener('click', function () {
-            var toDoAreaText = document.getElementById('toDoAreaText').value;
-            var newLi = document.createElement('li');
-            newLi.textContent = toDoAreaText;
-            localStorage.setItem(toDoAreaText, toDoAreaText);
-            addLiMarker.appendChild(newLi);
-            document.getElementById('toDoAreaText').setAttribute('onclick', 'value=""');
+        function addOnPageList() {
+            var addLiMarker = document.getElementById('toDoList');
+            var buttonEvent = document.getElementById('submitToDo');
+            buttonEvent.addEventListener('click', function () {
+                var toDoAreaText = document.getElementById('toDoAreaText').value;
+                var newLi = document.createElement('li');
+                newLi.textContent = toDoAreaText;
+                localStorage.setItem(toDoAreaText, toDoAreaText);
+                addLiMarker.appendChild(newLi);
+                document.getElementById('toDoAreaText').setAttribute('onclick', 'value=""');
+            })
+        }
+        addOnPageList();
 
-        });
-        for (key in localStorage) {
-            var liOnPage = addLiMarker.appendChild(document.createElement('li'));
-            liOnPage.innerHTML = key;
-            liOnPage.addEventListener('click', function () {
-                localStorage.removeItem(key);
-                liOnPage.remove(this);
-            });
-        };
+        function saveInLocalStorage() {
 
+            for (key in localStorage) {
+                var liOnPage = document.getElementById('toDoList').appendChild(document.createElement('li'));
+                liOnPage.innerHTML = localStorage.getItem(key);
+                liOnPage.addEventListener('click', function (event) {
+                    liOnPage.parentElement.removeChild(this);
+                    localStorage.removeItem(key)
+                });
 
-
+            };
+        }
+        saveInLocalStorage();
     }
     getToDoList();
-};
+
+}
