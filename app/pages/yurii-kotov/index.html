@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../../bower_components/normalize-css/normalize.css">
+
+
+
+    <title>Social school</title>
+
+</head>
+
+<body>
+
+    <main class="container-fluid">
+        <div class="row">
+            <div class="left-colum col-md-3 col-sm-4" id="equalize">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 text-center">
+                        <div class="user">
+                            <p class="user__user-name">Юрий Котов</p>
+                        </div>
+                    </div>
+                    <div class="user-avatar">
+                        <img src="../../images/yurii-kotov/User.png" alt="" class="user-avatar__icon">
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-colum col-md-9 col-sm-8 col-xs-12" id="equalize">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-3 col-sm-4">
+                                    <ul class="user-info__list-opt">
+                                        <li class="user-info__head">Год рождения:</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-8 col-sm-6">
+                                    <ul class="user-info__list-opt">
+                                        <li class="user-info__data-day" id="user-info__date"></li>
+                                    </ul>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-md-3 col-sm-4">
+                                    <ul class="user-info__list-opt">
+                                        <li class="user-info__head">Хобби и увлечения:</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-8 col-sm-6">
+                                    <ul class="user-info__list-opt" id="user-info__hobby">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="decorate-line"></div>
+
+                <div class="col-sm-8 col-md-4 to-do__position_sm">
+                    <div class="to-do">
+                        <div class="to-do__body">
+                            <ul id="toDoList" class="to-do__list">
+                            </ul>
+                        </div>
+                        <div class="to-do__form">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <p class="to-do__head">Write here:</p>
+                                    <textarea name="text" id="toDoAreaText" rows="2" class="to-do__textarea"></textarea>
+                                    <input type="submit" value="send" id="submitToDo" class="to-do__submit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 news-blog">
+                    <div class="head-news">
+                        <h2 class="head-news__header" id="headBlog"></h2>
+                    </div>
+                    <div class="article-news">
+                        <div class="row" id="getNews">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </main>
+
+
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script src="../../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../../bower_components/matchHeight/dist/jquery.matchHeight.js"></script>
+
+
+</body>
+
+</html>
