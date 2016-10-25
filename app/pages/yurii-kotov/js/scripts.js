@@ -70,6 +70,7 @@ function getToDoList() {
         buttonEvent.addEventListener('click', function () {
             var toDoAreaText = document.getElementById('toDoAreaText').value;
             var newLi = document.createElement('li');
+            newLi.setAttribute('onclick', 'removeThisLi(this)');
             newLi.textContent = toDoAreaText;
             localStorage.setItem(toDoAreaText, toDoAreaText);
             addLiMarker.appendChild(newLi);
@@ -84,7 +85,7 @@ function getToDoList() {
 
         for (key in localStorage) {
             var liOnPage = document.getElementById('toDoList').appendChild(document.createElement('li'));
-            liOnPage.innerHTML = localStorage.getItem(key);
+            liOnPage.innerHTML = key;
             liOnPage.setAttribute('onclick', 'removeThisLi(this)');
         }
     }
@@ -94,6 +95,6 @@ function getToDoList() {
 getToDoList();
 
 function removeThisLi(key) {
-    key.parentNode.removeChild(key);
+    key.parentElement.removeChild(key);
     localStorage.removeItem(key.innerHTML);
 }
