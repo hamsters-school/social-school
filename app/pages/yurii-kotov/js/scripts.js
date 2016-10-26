@@ -23,7 +23,7 @@ function addInfoAboutUser() {
         } else {
             addToHtml.innerHTML = item + ',';
         }
-    });
+    })
 }
 addInfoAboutUser();
 
@@ -56,8 +56,8 @@ function getNewsFromGoogle() {
                 '<p>' + blogNews.responseData.entries[k].contentSnippet + '</p>' +
                 '<a href="' + blogNews.responseData.entries[k].link + '">' + blogNews.responseData.entries[k].link + '</a>';
             addArticleBlock.innerHTML = elmentShow;
-        };
-    };
+        }
+    }
 }
 getNewsFromGoogle();
 
