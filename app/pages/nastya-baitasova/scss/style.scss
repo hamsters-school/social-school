@@ -25,10 +25,22 @@ $grey: #787778;
   }
 }
 
-#news{
+#news {
   list-style: none;
 }
 
 #text {
   margin-left: 15px;
+}
+
+.female, .male {
+  float: left;
+}
+
+.male {
+  margin-left: 80px;
+}
+
+.clear {
+  clear: both;
 }

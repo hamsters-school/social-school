@@ -21,4 +21,13 @@
 #text {
   margin-left: 15px; }
 
+.female, .male {
+  float: left; }
+
+.male {
+  margin-left: 80px; }
+
+.clear {
+  clear: both; }
+
 /*# sourceMappingURL=style.css.map */
