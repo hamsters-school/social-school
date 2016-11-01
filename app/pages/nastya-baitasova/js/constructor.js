@@ -23,34 +23,68 @@ function Inheritance() {
 
     var _this = this;
 
-    this.sort = function() {
+    var women = [];
+    var men = [];
 
-        var array = _this.arr.results;
+    var allUsers = undefined;
 
-        for (var i = 0; i < array.length; i++) {
-            if(array[i].gender == 'female') {
+    function sort() {
+        for (var i = 0; i < allUsers.length; i++) {
+            if (allUsers[i].gender == 'female') {
+
+                women.push(allUsers[i]);
+
+            } else if (allUsers[i].gender == 'male') {
+
+                men.push(allUsers[i]);
+
+            }
+        }
+    }
+
+    this.outputPeople = function() {
+        allUsers = _this.arr.results;
+
+        sort();
+
+        console.log(_this.arr);
+        console.log(men);
+
+        for (var i = 0; i < allUsers.length; i++) {
+            if (allUsers[i].gender == 'female') {
 
                 var girls = document.getElementById('girls');
                 var newLi = document.createElement('li');
+                var pictureFemale = document.createElement('img');
 
-                newLi.innerHTML = array[i].picture.large;
-                newLi.innerHTML = array[i].name.first + array[i].name.last;
+                pictureFemale.setAttribute('src', allUsers[i].picture.large);
+                newLi.innerHTML = "\n" + allUsers[i].name.first + " " + allUsers[i].name.last;
                 girls.appendChild(newLi);
-            } else if(array[i].gender == 'male') {
+                girls.appendChild(pictureFemale);
+            }else if(allUsers[i].gender == 'male') {
 
                 var boys = document.getElementById('boys');
                 var li = document.createElement('li');
+                var pictureMale = document.createElement('img');
 
-                li.innerHTML = array[i].picture.large;
-                li.innerHTML = array[i].name.first + array[i].name.last;
+                pictureMale.setAttribute('src', allUsers[i].picture.large);
+                li.innerHTML = "\n" + allUsers[i].name.first + " " + allUsers[i].name.last;
                 boys.appendChild(li);
+                boys.appendChild(pictureMale);
+                men.push(li);
             }
         }
 
-    }
+    };
+
 }
 
 
 var inheritance = new Inheritance();
 inheritance.getAjaxResult('https://randomuser.me/api?results=10');
-inheritance.sort();
+/*setTimeout(function () {
+    inheritance.outputPeople();
+}, 1000);*/
+
+inheritance.outputPeople();
+

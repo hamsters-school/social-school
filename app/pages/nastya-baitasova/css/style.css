@@ -22,10 +22,8 @@
   margin-left: 15px; }
 
 .female, .male {
+  margin-left: 15px;
   float: left; }
-
-.male {
-  margin-left: 80px; }
 
 .clear {
   clear: both; }
