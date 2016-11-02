@@ -42,13 +42,31 @@ function Inheritance() {
         }
     }
 
+
+    this.setGet = function(param) {
+
+        if (param && param.gender == 'female') {
+
+            women.push(param);
+
+        } else if (param && param.gender == 'male') {
+
+            men.push(param);
+
+        } else {
+            return [women, men];
+        }
+
+    };
+
+
     this.outputPeople = function() {
         allUsers = _this.arr.results;
 
         sort();
 
-        console.log(_this.arr);
-        console.log(men);
+        /*console.log(_this.arr);
+         console.log(men);*/
 
         for (var i = 0; i < allUsers.length; i++) {
             if (allUsers[i].gender == 'female') {
@@ -61,6 +79,7 @@ function Inheritance() {
                 newLi.innerHTML = "\n" + allUsers[i].name.first + " " + allUsers[i].name.last;
                 girls.appendChild(newLi);
                 girls.appendChild(pictureFemale);
+
             }else if(allUsers[i].gender == 'male') {
 
                 var boys = document.getElementById('boys');
@@ -71,11 +90,11 @@ function Inheritance() {
                 li.innerHTML = "\n" + allUsers[i].name.first + " " + allUsers[i].name.last;
                 boys.appendChild(li);
                 boys.appendChild(pictureMale);
-                men.push(li);
             }
         }
 
     };
+
 
 }
 
@@ -86,5 +105,19 @@ inheritance.getAjaxResult('https://randomuser.me/api?results=10');
     inheritance.outputPeople();
 }, 1000);*/
 
+var newMen = {
+    name: {
+        first: "Vasya",
+        last: "berry",
+        title: "mr"
+    },
+    gender: "male"
+};
+
+
 inheritance.outputPeople();
+inheritance.setGet(newMen);
+
+
+
 
