@@ -98,6 +98,7 @@ function Inheritance() {
 
 }
 
+Users.prototype = Object.create(Inheritance.prototype);
 
 var inheritance = new Inheritance();
 inheritance.getAjaxResult('https://randomuser.me/api?results=10');
