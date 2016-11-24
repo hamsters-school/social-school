@@ -15,6 +15,9 @@
   .row__profile .col-xs-8 {
     text-transform: lowercase; }
 
+.linkOnSlideShow {
+  margin-left: 42px; }
+
 #news {
   list-style: none; }
 
