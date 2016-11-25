@@ -30,14 +30,36 @@ Promise.all([
     httpGet('https://pixabay.com/api/?key=2980920-46f1aa264b036ffc6e45ebad0&orientation=vertical&q=red+flowers&min_height=500')
 ]).then(results => {
 
-    console.log(results);
+
     let elementId = document.getElementById('images');
-    let pictures = document.createElement('img');
 
-    for (let i = 0; i <= 20; i++) {
+    for (let i = 0; i <= results.length; i++) {
 
-        pictures.setAttribute('src', results[i]);
-        elementId.appendChild(pictures);
+
+        let intermediateResult = results[i].hits;
+
+        for (let j = 0; j <= intermediateResult.length; j++) {
+            let pictures = document.createElement('img');
+
+            //console.log(intermediateResult[j].webformatURL);
+
+            pictures.setAttribute('src', intermediateResult[j].webformatURL);
+            pictures.setAttribute("onclick", "blogSelectedImg(this)");
+            elementId.appendChild(pictures);
+        }
 
     }
 });
+
+let blogSelectedImg = (myImg) => {
+
+    let selectedImg = document.getElementById('selectedImg');
+    selectedImg.innerHTML = '';
+
+    selectedImg.appendChild(myImg.cloneNode(true));
+
+    };
+
+
+
+

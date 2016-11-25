@@ -46,3 +46,18 @@ $grey: #787778;
   clear: both;
 }
 
+#images {
+  text-align: center;
+}
+
+#images img{
+  width: 120px;
+  height: 190px;
+  margin: 5px 5px;
+}
+
+#selectedImg {
+  text-align: center;
+  margin-top: 10px;
+}
+
