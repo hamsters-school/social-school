@@ -27,6 +27,7 @@ $grey: #787778;
 
 .linkOnSlideShow {
   margin-left: 42px;
+  display: block;
 }
 
 #news {
@@ -61,3 +62,65 @@ $grey: #787778;
   margin-top: 10px;
 }
 
+.jQuerySlideShow {
+  display: block;
+  margin-left: 42px;
+}
+
+.slides {
+  &__show {
+    background-color: #999999;
+    width: 400px;
+    overflow: hidden;
+    margin: auto;
+
+    &Img {
+      width: 16000px;
+      position: relative;
+      left: 0;
+      /*margin: auto 40px auto 40px;*/
+
+    }
+
+    &Img img {
+      width: 400px;
+      height: 490px;
+      float: left;
+    }
+
+    &Img img:first-child {
+      text-align: center;
+    }
+  }
+
+  &__autoplay {
+    background-color: #28a4c9;
+    width: 400px;
+    margin: auto;
+
+    & p {
+      text-align: center;
+    }
+  }
+}
+
+.slides-wrap {
+  position: relative;
+  width: 400px;
+  margin: auto;
+
+  &__leftArrow, &__rightArrow{
+    width: 40px;
+    height: 40px;
+    background-color: #28a4c9;
+    position: absolute;
+    display: block;
+    z-index: 2;
+    top: 215px;
+    left: -40px;
+  }
+
+  &__rightArrow {
+    margin-left: 440px;
+  }
+}

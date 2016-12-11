@@ -5,6 +5,7 @@
   "homepage": "https://github.com/hamsters-school/social-school.git",
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "normalize-css": "normalize.css#^4.2.0"
+    "normalize-css": "normalize.css#^4.2.0",
+    "jquery": "^3.1.1"
   }
 }
