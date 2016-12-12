@@ -1,12 +1,10 @@
-
 $.when(
     $.ajax('https://pixabay.com/api/?key=2980920-46f1aa264b036ffc6e45ebad0&orientation=vertical&q=yellow+flowers&min_height=500'),
-   $.ajax('https://pixabay.com/api/?key=2980920-46f1aa264b036ffc6e45ebad0&orientation=vertical&q=red+flowers&min_height=500')
+    $.ajax('https://pixabay.com/api/?key=2980920-46f1aa264b036ffc6e45ebad0&orientation=vertical&q=red+flowers&min_height=500')
 ).then((result1, result2) => {
 
 
     const WIDTHONE = 400;
-
 
 
     let results = result1[0].hits.concat(result2[0].hits);
@@ -25,10 +23,10 @@ $.when(
     let arrows = 0;
 
     $('.slides-wrap__leftArrow').click(() => {
-        if(arrows < 0) {
+        if (arrows < 0) {
             $('.slides__showImg').animate({
                 'left': arrows += WIDTHONE
-            },1000);
+            }, 1000);
         }
         else {
             return false;
@@ -37,11 +35,11 @@ $.when(
 
     let minWidth = widthImgs - WIDTHONE;
 
-      $('.slides-wrap__rightArrow').click(() => {
-        if(arrows > -minWidth) {
+    $('.slides-wrap__rightArrow').click(() => {
+        if (arrows > -minWidth) {
             $('.slides__showImg').animate({
                 'left': arrows -= WIDTHONE
-            },1000);
+            }, 1000);
         }
         else {
             return false;
@@ -49,18 +47,26 @@ $.when(
     });
 
 
+    let trigger = false;
 
     $('.slides__autoplay p input').change(() => {
-        setInterval(() => {
-            if(arrows > -minWidth) {
-                $('.slides__showImg').animate({
-                    'left': arrows -= WIDTHONE
-                },1000);
-            }
-            else {
-                return false;
-            }
+
+        trigger = !trigger;
+
+
+        let autoPlay = setInterval(() => {
+
+            if(trigger){
+                if (arrows > -minWidth) {
+                    $('.slides__showImg').animate({
+                        'left': arrows -= WIDTHONE
+                    }, 1000);
+                }
+                else return false;
+            } else clearInterval(autoPlay);
+
         }, 3000);
+
     });
 
 });
